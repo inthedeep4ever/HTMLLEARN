@@ -458,3 +458,264 @@ De tags die je vrijwel zeker moet kennen:
 * `<legend>` = titel van een groep formulieronderdelen
 
 Als je wilt, kan ik er ook een **toets-spiekbrief van 1 A4** maken met alleen de dingen die je moet onthouden.
+
+
+# HTML Elementen en Semantiek – Samenvatting
+
+## 1. `<span>`
+
+### Wat is het?
+
+`<span>` is een **inline-element** zonder semantische betekenis. Het wordt gebruikt om een klein deel van tekst of inhoud te groeperen zodat je er CSS of JavaScript op kunt toepassen.
+
+### Kenmerken
+
+* Inline-element
+* Geen semantische betekenis
+* Wordt vaak gebruikt voor styling
+
+### Voorbeeld
+
+```html
+<p>Dit is een <span class="highlight">belangrijk</span> woord.</p>
+```
+
+### Gebruik wanneer
+
+* Je een specifiek woord of stukje tekst wilt stylen.
+* Je geen semantisch element nodig hebt.
+
+---
+
+## 2. `<div>`
+
+### Wat is het?
+
+`<div>` is een **block-element** zonder semantische betekenis. Het wordt gebruikt als algemene container voor andere HTML-elementen.
+
+### Kenmerken
+
+* Block-element
+* Geen semantische betekenis
+* Veel gebruikt voor lay-outs en groepering
+
+### Voorbeeld
+
+```html
+<div class="container">
+  <h2>Titel</h2>
+  <p>Inhoud van de sectie.</p>
+</div>
+```
+
+### Gebruik wanneer
+
+* Je meerdere elementen wilt groeperen.
+* Er geen geschikter semantisch element bestaat.
+
+---
+
+# 3. Semantiek in HTML
+
+## Wat betekent semantiek?
+
+Semantische HTML gebruikt elementen die beschrijven **wat de inhoud betekent**, niet alleen hoe deze eruitziet.
+
+### Niet-semantisch
+
+```html
+<div class="navigation">
+  ...
+</div>
+```
+
+### Semantisch
+
+```html
+<nav>
+  ...
+</nav>
+```
+
+### Voordelen
+
+* Betere toegankelijkheid (screenreaders)
+* Betere SEO
+* Duidelijkere code
+* Makkelijker onderhoud
+
+---
+
+# 4. `<nav>`
+
+## Wat is het?
+
+`<nav>` bevat belangrijke navigatielinks van een website.
+
+### Voorbeeld
+
+```html
+<nav>
+  <a href="/">Home</a>
+  <a href="/about">Over ons</a>
+  <a href="/contact">Contact</a>
+</nav>
+```
+
+### Gebruik wanneer
+
+* Hoofdmenu's
+* Zijmenu's
+* Navigatieblokken
+
+### Niet gebruiken voor
+
+* Elke willekeurige verzameling links.
+
+---
+
+# 5. `<header>`
+
+## Wat is het?
+
+`<header>` bevat introductie-informatie of navigatie voor een pagina of sectie.
+
+### Mogelijke inhoud
+
+* Logo
+* Titel
+* Navigatie
+* Zoekfunctie
+
+### Voorbeeld
+
+```html
+<header>
+  <h1>Mijn Website</h1>
+  <nav>
+    ...
+  </nav>
+</header>
+```
+
+---
+
+# 6. `<main>`
+
+## Wat is het?
+
+`<main>` bevat de belangrijkste inhoud van de pagina.
+
+### Kenmerken
+
+* Slechts één `<main>` per pagina
+* Bevat unieke inhoud van de pagina
+* Geen herhalende onderdelen zoals header of footer
+
+### Voorbeeld
+
+```html
+<main>
+  <article>
+    <h2>Nieuwsbericht</h2>
+    <p>Tekst...</p>
+  </article>
+</main>
+```
+
+### Voordeel
+
+Screenreaders kunnen direct naar de hoofdinhoud springen.
+
+---
+
+# 7. `<footer>`
+
+## Wat is het?
+
+`<footer>` bevat informatie onderaan een pagina of sectie.
+
+### Mogelijke inhoud
+
+* Copyright
+* Contactgegevens
+* Juridische informatie
+* Extra links
+
+### Voorbeeld
+
+```html
+<footer>
+  <p>&copy; 2026 Mijn Website</p>
+</footer>
+```
+
+---
+
+# 8. `<audio>`
+
+## Wat is het?
+
+Met `<audio>` kun je audiobestanden afspelen in de browser.
+
+### Voorbeeld
+
+```html
+<audio controls>
+  <source src="muziek.mp3" type="audio/mpeg">
+</audio>
+```
+
+### Belangrijke attributen
+
+| Attribuut | Functie              |
+| --------- | -------------------- |
+| controls  | Toont afspeelknoppen |
+| autoplay  | Start automatisch    |
+| loop      | Herhaalt audio       |
+| muted     | Dempt geluid         |
+
+---
+
+# 9. `<video>`
+
+## Wat is het?
+
+Met `<video>` kun je videobestanden rechtstreeks in de browser afspelen.
+
+### Voorbeeld
+
+```html
+<video controls width="600">
+  <source src="video.mp4" type="video/mp4">
+</video>
+```
+
+### Belangrijke attributen
+
+| Attribuut | Functie                  |
+| --------- | ------------------------ |
+| controls  | Toont videobediening     |
+| autoplay  | Speelt automatisch af    |
+| loop      | Herhaalt video           |
+| muted     | Dempt geluid             |
+| poster    | Voorvertoningsafbeelding |
+
+---
+
+# Overzichtstabel
+
+| Element    | Type       | Doel                           |
+| ---------- | ---------- | ------------------------------ |
+| `<span>`   | Inline     | Kleine stukken tekst groeperen |
+| `<div>`    | Block      | Algemene container             |
+| `<nav>`    | Semantisch | Navigatie                      |
+| `<header>` | Semantisch | Introductie van pagina/sectie  |
+| `<main>`   | Semantisch | Hoofdinhoud                    |
+| `<footer>` | Semantisch | Afsluitende informatie         |
+| `<audio>`  | Media      | Audio afspelen                 |
+| `<video>`  | Media      | Video afspelen                 |
+
+# Conclusie
+
+Gebruik semantische HTML-elementen zoals `<header>`, `<nav>`, `<main>` en `<footer>` wanneer mogelijk. Ze maken je website toegankelijker, beter voor SEO en makkelijker te onderhouden. Gebruik `<div>` en `<span>` alleen wanneer er geen specifiek semantisch element beschikbaar is. Voor multimedia gebruik je `<audio>` voor geluid en `<video>` voor videobestanden.
